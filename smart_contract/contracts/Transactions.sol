@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: UNLICENSED
 
 pragma solidity ^0.8.0;
 
@@ -15,7 +15,7 @@ contract Transactions {
     );
 
     struct TransferStruct {
-        address from;
+        address sender;
         address receiver;
         uint256 amount;
         string message;
@@ -41,7 +41,7 @@ contract Transactions {
                 block.timestamp,
                 keyword
             )
-        ); //adding to the trnasaction array, not yet in the blockchain
+        );
 
         emit Transfer(
             msg.sender,
@@ -50,7 +50,7 @@ contract Transactions {
             message,
             block.timestamp,
             keyword
-        ); //emitting the event
+        );
     }
 
     function getAllTransactions()
